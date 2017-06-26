@@ -15,5 +15,15 @@ export default class DistrictRepository {
     }, {});
     
   }
+  
+  findAllMatching() {
+    const allResults = [];
+    return allResults;
+  }
+  
+  findByName() {
+    const byNameResults = 'hi';
+    return byNameResults;
+  }
 
 }
