@@ -3,3 +3,10 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+h1 {
+  font-family: 'Cabin Sketch', Arial, sans-serif;
+  background-color: #fbebd3;
+  height: 150px;
+  margin: 0 auto;
+}
