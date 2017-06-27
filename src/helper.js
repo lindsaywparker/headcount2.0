@@ -18,15 +18,16 @@ export default class DistrictRepository {
     if(!this.data[input]) {
       return undefined;
     }
+    
+    const byNameResults = Object.assign({}, {location: input}, {data: this.data[input]});
 
-    const byNameResults = Object.assign({}, {location: input.toUpperCase()});
     return byNameResults;
   }
 
   scrubData(data) {
     return data.reduce( (acc, elem) => {
       elem.Location = elem.Location.toUpperCase();
-        acc[elem.Location] = Object.assign({}, acc[elem.Location], { [elem.TimeFrame]: elem.Data });
+        acc[elem.Location] = Object.assign({}, acc[elem.Location], { [elem.TimeFrame]: ( Math.round(1000 * elem.Data)/1000 || 0 ) });
       return acc;
     }, {});
   }
