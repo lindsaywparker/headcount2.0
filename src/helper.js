@@ -3,9 +3,20 @@ export default class DistrictRepository {
     this.data = this.scrubData(dataset)
   }
 
-  findAllMatching() {
-    const allResults = [];
-    return allResults;
+  findAllMatches(input) {
+    const locationsArray = Object.keys(this.data).map( location => {
+      return {location: location, data: this.data[location]};
+    });
+    
+    if(!input) {
+      return locationsArray;
+    }
+
+    let filteredArray = locationsArray.filter( elem => {
+      return elem.location.includes(input.toUpperCase());
+    });
+
+    return filteredArray;
   }
 
   findByName(input) {
@@ -27,7 +38,7 @@ export default class DistrictRepository {
   scrubData(data) {
     return data.reduce( (acc, elem) => {
       elem.Location = elem.Location.toUpperCase();
-        acc[elem.Location] = Object.assign({}, acc[elem.Location], { [elem.TimeFrame]: ( Math.round(1000 * elem.Data)/1000 || 0 ) });
+      acc[elem.Location] = Object.assign({}, acc[elem.Location], { [elem.TimeFrame]: ( Math.round(1000 * elem.Data)/1000 || 0 ) });
       return acc;
     }, {});
   }
