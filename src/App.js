@@ -18,7 +18,6 @@ class App extends Component {
 
   handleInput(input) {
     this.setState({dataArray: district.findAllMatches(input)})
-    console.log('hello');
   }
 
   render() {
