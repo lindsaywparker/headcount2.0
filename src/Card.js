@@ -2,10 +2,28 @@ import React from 'react';
 import './Card.css';
 
 
-const Card = () => {
+const Card = ( { location, data } ) => {
+  const rows = Object.keys(data);
+  
   return (
     <div>
-      Hi, I'm Card
+      <h2 className='district-title'>{location}</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>YEAR</th>
+            <th>ENROLLMENT</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map( year =>
+            <tr key={year}>
+              <td>{year}</td>
+              <td>{data[year]}</td>
+            </tr>
+          )}
+        </tbody>
+      </table>
     </div>
   )
 }
