@@ -6,14 +6,19 @@ import CardList from './CardList';
 import DistrictRepository from './helper';
 import kinderData from '../data/kindergartners_in_full_day_program.js';
 import './App.css';
+const district = new DistrictRepository(kinderData);
 
 class App extends Component {
   constructor() {
     super();
-    const district = new DistrictRepository(kinderData);
     this.state = {
       dataArray: district.findAllMatches(),
     }
+  }
+
+  handleInput(input) {
+    this.setState({dataArray: district.findAllMatches(input)})
+    console.log('hello');
   }
 
   render() {
@@ -21,7 +26,7 @@ class App extends Component {
       <div>
         <Start />
         <Comparison />
-        <Filter />
+        <Filter handleInput={this.handleInput.bind(this)}/>
         <CardList dataArray={this.state.dataArray}/>
       </div>
     );

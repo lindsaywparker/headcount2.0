@@ -1,19 +1,36 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Filter.css';
 
-const Filter = () => {
-  return (
-    <div>
-      <input type="text"
-             className="filter-input"/>
-      <input type="button"
-             className="filter-button"
-             value="Filter"/>
-      <input type="button"
-             className="show-all-button"
-             value="Show All"/>
-    </div>
-  )
-}
+export default class Filter extends Component {
+  constructor( { handleInput }) {
+    super();
+    this.state = {
+      input: ''
+    }
+  }
 
-export default Filter;
+  handleFilter(e) {
+    this.setState({ input: e.target.value });
+    this.props.handleInput(e.target.value);
+  }
+
+  handleShowAll() {
+    this.setState({input: ''});
+    this.props.handleInput();
+  }
+
+  render() {
+    return (
+      <div>
+        <input type="text"
+               className="filter-input"
+               value={this.state.input}
+               onChange={this.handleFilter.bind(this)}/>
+        <input type="button"
+               className="show-all-button"
+               value="Show All"
+               onClick={this.handleShowAll.bind(this)}/>
+      </div>
+    );
+  }
+}

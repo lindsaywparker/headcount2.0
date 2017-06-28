@@ -3,7 +3,6 @@ import PropTypes, { string, object } from 'prop-types';
 
 import './Card.css';
 
-
 const Card = ( { location, data } ) => {
   const rows = Object.keys(data);
 
