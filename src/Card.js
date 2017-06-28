@@ -1,10 +1,12 @@
 import React from 'react';
+import PropTypes, { string, object } from 'prop-types';
+
 import './Card.css';
 
 
 const Card = ( { location, data } ) => {
   const rows = Object.keys(data);
-  
+
   return (
     <div>
       <h2 className='district-title'>{location}</h2>
@@ -26,6 +28,11 @@ const Card = ( { location, data } ) => {
       </table>
     </div>
   )
+}
+
+Card.propTypes = {
+  location: string,
+  data: object
 }
 
 export default Card;
