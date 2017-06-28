@@ -15,7 +15,7 @@ class App extends Component {
       dataArray: district.findAllMatches(),
     }
   }
-  
+
   render() {
     return (
       <div>
