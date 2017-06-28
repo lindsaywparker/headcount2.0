@@ -3,11 +3,15 @@ import Card from './Card';
 import './CardList.css';
 
 
-const CardList = () => {
+const CardList = ({dataArray}) => {
   return (
     <div>
-      Hi, I'm CardList
-      <Card />
+      {dataArray.map( (district, i) => 
+        <Card key={i}
+              location={district.location}
+              data={district.data}
+        />
+      )}
     </div>
   )
 }
