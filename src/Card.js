@@ -21,7 +21,7 @@ const Card = ( { location, data } ) => {
           {rows.map( year =>
             <tr key={year}>
               <td>{year}</td>
-              <td>{data[year]}</td>
+              <td className={data[year] >= 0.5 ? 'above-half' : 'below-half'}>{(data[year] * 100).toFixed(1)}%</td>
             </tr>
           )}
         </tbody>
