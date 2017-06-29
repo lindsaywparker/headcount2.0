@@ -20,13 +20,20 @@ class App extends Component {
     this.setState({dataArray: district.findAllMatches(input)})
   }
 
+  toggleSelected(location) {
+    const index = this.state.dataArray.map(district => district.location).indexOf(location);
+    this.state.dataArray[index].selected = !this.state.dataArray[index].selected; 
+    this.setState({ dataArray: this.state.dataArray });
+  }
+
   render() {
     return (
       <div>
         <Start />
         <Comparison />
         <Filter handleInput={this.handleInput.bind(this)}/>
-        <CardList dataArray={this.state.dataArray}/>
+        <CardList dataArray={this.state.dataArray} 
+                  toggleSelected={this.toggleSelected.bind(this)}/>
       </div>
     );
   }

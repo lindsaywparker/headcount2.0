@@ -4,13 +4,15 @@ import PropTypes, { arrayOf, string, object, shape } from 'prop-types';
 import './CardList.css';
 
 
-const CardList = ({dataArray}) => {
+const CardList = ({dataArray, toggleSelected}) => {
   return (
     <div>
       {dataArray.map( (district, i) =>
         <Card key={i}
               location={district.location}
               data={district.data}
+              selected={district.selected}
+              toggleSelected={toggleSelected}
         />
       )}
     </div>

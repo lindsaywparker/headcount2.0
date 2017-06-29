@@ -1,11 +1,11 @@
 export default class DistrictRepository {
   constructor(dataset) {
-    this.data = this.scrubData(dataset)
+    this.data = this.scrubData(dataset);
   }
 
   findAllMatches(input) {
     const locationsArray = Object.keys(this.data).map( location => {
-      return {location: location, data: this.data[location]};
+      return {location: location, data: this.data[location], selected: false};
     });
     
     if(!input) {
@@ -58,7 +58,10 @@ export default class DistrictRepository {
   scrubData(data) {
     return data.reduce( (acc, elem) => {
       elem.Location = elem.Location.toUpperCase();
-      acc[elem.Location] = Object.assign({}, acc[elem.Location], { [elem.TimeFrame]: ( Math.round(1000 * elem.Data)/1000 || 0 ) });
+      acc[elem.Location] = Object.assign({},
+                            acc[elem.Location],
+                            { [elem.TimeFrame]: ( Math.round(1000 * elem.Data)/1000 || 0 ) },
+                            );
       return acc;
     }, {});
   }

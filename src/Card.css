@@ -5,3 +5,11 @@
 .below-half {
   background-color: red;
 }
+
+.active {
+  border: 2px dashed magenta;
+}
+
+.inactive {
+  border: 1px solid green;
+}

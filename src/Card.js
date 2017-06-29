@@ -3,11 +3,12 @@ import PropTypes, { string, object } from 'prop-types';
 
 import './Card.css';
 
-const Card = ( { location, data } ) => {
+const Card = ( { location, data, selected, toggleSelected } ) => {
   const rows = Object.keys(data);
-
+  const activeClass = selected === true ? 'active' : 'inactive';
+  
   return (
-    <div>
+    <div className={activeClass} onClick={() => toggleSelected(location)}>
       <h2 className='district-title'>{location}</h2>
       <table>
         <thead>
