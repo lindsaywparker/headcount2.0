@@ -22,7 +22,7 @@ class App extends Component {
 
   toggleSelected(location) {
     const index = this.state.dataArray.map(district => district.location).indexOf(location);
-    this.state.dataArray[index].selected = !this.state.dataArray[index].selected; 
+    this.state.dataArray[index].selected = !this.state.dataArray[index].selected;
     this.setState({ dataArray: this.state.dataArray });
   }
 
@@ -30,9 +30,10 @@ class App extends Component {
     return (
       <div>
         <Start />
-        <Comparison />
+        <Comparison dataArray={this.state.dataArray}
+                    toggleSelected={this.toggleSelected.bind(this)}/>
         <Filter handleInput={this.handleInput.bind(this)}/>
-        <CardList dataArray={this.state.dataArray} 
+        <CardList dataArray={this.state.dataArray}
                   toggleSelected={this.toggleSelected.bind(this)}/>
       </div>
     );

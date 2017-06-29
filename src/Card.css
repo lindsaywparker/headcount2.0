@@ -16,14 +16,11 @@
   margin: 0 auto;
 }
 
-.above-half {
-  background-color: #54d0ed;
-}
-
-.below-half {
-  background-color: #ed7154;
-}
-
 .active {
-  background-color: #54D0ED;
+  box-shadow: 3px 3px 3px black;
+}
+
+.active h2 {
+  color: #327c8e;
+  font-weight: 700;
 }
