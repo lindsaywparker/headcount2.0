@@ -18,11 +18,23 @@ const Card = ( { location, data, selected, toggleSelected } ) => {
           </tr>
         </thead>
         <tbody>
-          {rows.map( year =>
-            <tr key={year}>
-              <td>{year}</td>
-              <td className={data[year] >= 0.5 ? 'above-half' : 'below-half'}>{(data[year] * 100).toFixed(1)}%</td>
-            </tr>
+          {rows.map( year => {
+            let color;
+            if (data[year] >= 0.5) {
+              color = 'rgba(84, 208, 237, ';
+            } else {
+              color = 'rgba(237, 113, 84, ';
+            }
+            const opacity = Math.abs(data[year]-0.5) / 0.5;
+            color = color + opacity + ')';
+            const style = {backgroundColor: color};
+            
+            return (
+              <tr key={year}>
+                <td>{year}</td>
+                <td style={style}>{(data[year] * 100).toFixed(1)}%</td>
+              </tr>
+            )}
           )}
         </tbody>
       </table>
