@@ -1,3 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+  padding-top: 30px;
+  background-color: #FFFEF1;
+  height: 140px;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -6,7 +16,11 @@ body {
 
 h1 {
   font-family: 'Cabin Sketch', Arial, sans-serif;
-  background-color: #fbebd3;
-  height: 150px;
+  font-size: 5.063em;
+  font-weight: 700;
   margin: 0 auto;
+  text-align: center;
+  color: #0C273D;
 }
+
+

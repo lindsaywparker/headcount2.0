@@ -8,7 +8,7 @@ const Card = ( { location, data, selected, toggleSelected } ) => {
   const activeClass = selected === true ? 'active' : 'inactive';
   
   return (
-    <div className={activeClass} onClick={() => toggleSelected(location)}>
+    <div className={'card ' + activeClass} onClick={() => toggleSelected(location)}>
       <h2 className='district-title'>{location}</h2>
       <table>
         <thead>
