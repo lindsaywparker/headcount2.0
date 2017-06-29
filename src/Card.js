@@ -4,7 +4,7 @@ import PropTypes, { string, object } from 'prop-types';
 import './Card.css';
 
 const Card = ( { location, data, selected, toggleSelected } ) => {
-  const rows = Object.keys(data);
+  const rows = Object.keys(data).reverse();
   const activeClass = selected === true ? 'active' : 'inactive';
   
   return (
