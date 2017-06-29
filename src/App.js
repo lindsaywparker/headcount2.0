@@ -31,7 +31,9 @@ class App extends Component {
       <div>
         <Start />
         <Comparison dataArray={this.state.dataArray}
-                    toggleSelected={this.toggleSelected.bind(this)}/>
+                    toggleSelected={this.toggleSelected.bind(this)}
+                    findAverage={district.findAverage.bind(district)}
+                    compareDistrictAverages={district.compareDistrictAverages.bind(district)}/>
         <Filter handleInput={this.handleInput.bind(this)}/>
         <CardList dataArray={this.state.dataArray}
                   toggleSelected={this.toggleSelected.bind(this)}/>
