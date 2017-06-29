@@ -4,7 +4,7 @@ import './Start.css';
 
 const Start = () => {
   return (
-    <div>
+    <div className='start'>
       Hi, I'm Start
     </div>
   )

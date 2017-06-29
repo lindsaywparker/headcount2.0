@@ -21,10 +21,11 @@ export default class Filter extends Component {
 
   render() {
     return (
-      <div>
+      <div className='filter'>
         <input type="text"
                className="filter-input"
                value={this.state.input}
+               placeholder='Filter results'
                onChange={this.handleFilter.bind(this)}/>
         <input type="button"
                className="show-all-button"

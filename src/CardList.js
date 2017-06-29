@@ -6,7 +6,7 @@ import './CardList.css';
 
 const CardList = ({dataArray, toggleSelected}) => {
   return (
-    <div>
+    <div className='cardlist'>
       {dataArray.map( (district, i) =>
         <Card key={i}
               location={district.location}

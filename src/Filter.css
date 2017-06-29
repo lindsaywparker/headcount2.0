@@ -1,0 +1,38 @@
+.filter {
+  display: flex;
+  position: relative;
+  z-index: 10;
+  height: 55px;
+  width: 100%;
+  justify-content: space-between;
+  background-color: #2C5E2E;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+}
+
+.filter-input, .show-all-button {
+  height: 26px;
+  border-radius: 13px;
+  border: 1px solid lightgray;
+  
+}
+
+.filter-input {
+  width: 230px;
+  background-color: #f6fbfc;
+  margin-right: 10px;
+  padding-left: 10px;
+}
+
+.filter-input::placeholder {
+  font-style: italic;
+}
+
+.show-all-button {
+  width: 100px;
+  background-color: #dceff6;
+}
+
+.show-all-button:hover {
+  background-color: #edf7fa;
+}

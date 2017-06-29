@@ -4,7 +4,7 @@ import './Comparison.css';
 
 const Comparison = () => {
   return (
-    <div>
+    <div className='comparison'>
       Hi, I'm Comparison
     </div>
   )
