@@ -1,27 +1,26 @@
 .filter {
-  display: flex;
   position: relative;
   z-index: 10;
-  height: 55px;
-  width: 100%;
+  display: flex;
   justify-content: space-between;
+  width: 100%;
+  height: 55px;
+  padding: 15px;
   background-color: #2C5E2E;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-  padding: 15px;
 }
 
 .filter-input, .show-all-button {
   height: 26px;
+  border: 1px solid #D3D3D3;
   border-radius: 13px;
-  border: 1px solid lightgray;
-  
 }
 
 .filter-input {
   width: 230px;
-  background-color: #f6fbfc;
-  margin-right: 10px;
   padding-left: 10px;
+  margin-right: 10px;
+  background-color: #F6FBFC;
   outline: none;
 }
 
@@ -31,10 +30,10 @@
 
 .show-all-button {
   width: 100px;
-  background-color: #dceff6;
+  background-color: #FFF;
   cursor: pointer;
 }
 
 .show-all-button:hover {
-  background-color: #edf7fa;
+  background-color: #EDF7FA;
 }
