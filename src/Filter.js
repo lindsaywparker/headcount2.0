@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { func } from 'prop-types';
 import './Filter.css';
 
 export default class Filter extends Component {
@@ -28,10 +29,15 @@ export default class Filter extends Component {
                placeholder='Filter results'
                onChange={this.handleFilter.bind(this)}/>
         <input type="button"
+               disabled={!this.state.input}
                className="show-all-button"
                value="Show All"
                onClick={this.handleShowAll.bind(this)}/>
       </div>
     );
   }
+}
+
+Filter.propTypes = {
+  handleInput: func
 }

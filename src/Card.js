@@ -1,12 +1,11 @@
 import React from 'react';
-import PropTypes, { string, object } from 'prop-types';
-
+import { string, object, bool, func } from 'prop-types';
 import './Card.css';
 
 const Card = ( { location, data, selected, toggleSelected } ) => {
   const rows = Object.keys(data).reverse();
   const activeClass = selected === true ? 'active' : 'inactive';
-  
+
   return (
     <div className={'card ' + activeClass} onClick={() => toggleSelected(location)}>
       <h2 className='district-title'>{location}</h2>
@@ -28,7 +27,7 @@ const Card = ( { location, data, selected, toggleSelected } ) => {
             const opacity = Math.abs(data[year]-0.5) / 0.5;
             color = color + opacity + ')';
             const style = {backgroundColor: color};
-            
+
             return (
               <tr key={year}>
                 <td>{year}</td>
@@ -44,7 +43,9 @@ const Card = ( { location, data, selected, toggleSelected } ) => {
 
 Card.propTypes = {
   location: string,
-  data: object
+  data: object,
+  selected: bool,
+  toggleSelected: func
 }
 
 export default Card;

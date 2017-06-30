@@ -8,21 +8,26 @@
 }
 
 .card h2 {
-  height: 40px;
+  height: 30px;
   font-weight: 400;
+  font-size: 20px;
+  margin: 15px 0;
 }
 
 .card table {
   margin: 0 auto;
   border-collapse: separate;
   border-spacing: 22px 2px;
+  font-size: 14px;
 }
 
 .active {
   box-shadow: 5px 3px 3px #0C273D;
+  border: 3px solid gray;
 }
 
 .active h2 {
   color: #d5654b;
   font-weight: 700;
+  margin: 10px 0;
 }
