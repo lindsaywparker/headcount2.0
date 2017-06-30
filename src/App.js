@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Start from './Start';
 import Comparison from './Comparison';
 import Filter from './Filter';
 import CardList from './CardList';
@@ -8,7 +7,7 @@ import kinderData from '../data/kindergartners_in_full_day_program.js';
 import './App.css';
 const district = new DistrictRepository(kinderData);
 
-class App extends Component {
+export default class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -23,13 +22,24 @@ class App extends Component {
   toggleSelected(location) {
     const index = this.state.dataArray.map(district => district.location).indexOf(location);
     this.state.dataArray[index].selected = !this.state.dataArray[index].selected;
-    this.setState({ dataArray: this.state.dataArray });
+
+    let selectedTotal = 0;
+    const selectedTotalSum = this.state.dataArray.map((district) => {
+      if(district.selected === true) {
+        selectedTotal++;
+      }
+    })
+
+    if(selectedTotal <= 2) {
+      this.setState({ dataArray: this.state.dataArray })
+    } else {
+      this.state.dataArray[index].selected = !this.state.dataArray[index].selected;
+    }
   }
 
   render() {
     return (
       <div className='app'>
-        <Start />
         <Comparison dataArray={this.state.dataArray}
                     toggleSelected={this.toggleSelected.bind(this)}
                     findAverage={district.findAverage.bind(district)}
@@ -41,5 +51,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;

@@ -3,24 +3,28 @@
 }
 
 header {
+  height: 140px;
   padding-top: 30px;
   background-color: #FFFEF1;
-  height: 140px;
 }
 
 body {
-  margin: 0;
   padding: 0;
+  margin: 0;
   font-family: sans-serif;
 }
 
 h1 {
+  margin: 0 auto;
+  color: #193E47;
   font-family: 'Cabin Sketch', Arial, sans-serif;
   font-size: 5.063em;
   font-weight: 700;
-  margin: 0 auto;
   text-align: center;
-  color: #193e47;
 }
 
-
+@media screen and (max-width: 450px) {
+  h1 {
+    font-size: 3.5em;
+  }
+}

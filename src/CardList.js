@@ -1,8 +1,7 @@
 import React from 'react';
 import Card from './Card';
-import PropTypes, { arrayOf, string, object, shape } from 'prop-types';
+import { arrayOf, string, object, shape, func, bool } from 'prop-types';
 import './CardList.css';
-
 
 const CardList = ({dataArray, toggleSelected}) => {
   return (
@@ -21,11 +20,13 @@ const CardList = ({dataArray, toggleSelected}) => {
 
 const allData = shape({
   location: string,
-  data: object
+  data: object,
+  selected: bool
 })
 
 CardList.propTypes = {
-  dataArray: arrayOf(allData)
+  dataArray: arrayOf(allData),
+  toggleSelected: func
 }
 
 export default CardList;
