@@ -28,7 +28,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='app'>
         <Start />
         <Comparison dataArray={this.state.dataArray}
                     toggleSelected={this.toggleSelected.bind(this)}
