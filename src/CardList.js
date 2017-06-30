@@ -3,7 +3,6 @@ import Card from './Card';
 import { arrayOf, string, object, shape, func, bool } from 'prop-types';
 import './CardList.css';
 
-
 const CardList = ({dataArray, toggleSelected}) => {
   return (
     <div className='cardlist'>

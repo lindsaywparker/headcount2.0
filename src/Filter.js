@@ -29,6 +29,7 @@ export default class Filter extends Component {
                placeholder='Filter results'
                onChange={this.handleFilter.bind(this)}/>
         <input type="button"
+               disabled={!this.state.input}
                className="show-all-button"
                value="Show All"
                onClick={this.handleShowAll.bind(this)}/>
