@@ -17,10 +17,10 @@
 }
 
 .active {
-  box-shadow: 3px 3px 3px black;
+  box-shadow: 5px 3px 3px #0C273D;
 }
 
 .active h2 {
-  color: #327c8e;
+  color: #d5654b;
   font-weight: 700;
 }
