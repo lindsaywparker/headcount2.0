@@ -8,7 +8,7 @@ import kinderData from '../data/kindergartners_in_full_day_program.js';
 import './App.css';
 const district = new DistrictRepository(kinderData);
 
-class App extends Component {
+export default class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -41,5 +41,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;

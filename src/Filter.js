@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { func } from 'prop-types';
 import './Filter.css';
 
 export default class Filter extends Component {
@@ -34,4 +35,8 @@ export default class Filter extends Component {
       </div>
     );
   }
+}
+
+Filter.propTypes = {
+  handleInput: func
 }

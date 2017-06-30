@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './Card';
+import { arrayOf, string, object, func, bool, shape } from 'prop-types';
 import './Comparison.css';
 
 
@@ -16,14 +17,14 @@ const Comparison = ({ dataArray, toggleSelected, findAverage, compareDistrictAve
   if(selectedDistricts.length >= 1) {
     showOne = true;
   }
-  
+
   if(selectedDistricts.length >= 2) {
     showComp = true;
     showTwo = true;
     comparisonResults = compareDistrictAverages(selectedDistricts[0].location, selectedDistricts[1].location)
   }
-  
-  
+
+
   return (
     <div className='comparison'>
       {showOne && <Card key={0}
@@ -45,6 +46,19 @@ const Comparison = ({ dataArray, toggleSelected, findAverage, compareDistrictAve
       />}
     </div>
   )
+}
+
+const allData = shape({
+  location: string,
+  data: object,
+  selected: bool
+})
+
+Comparison.propTypes = {
+  dataArray: arrayOf(allData),
+  toggleSelected: func,
+  findAverage: func,
+  compareDistrictAverages: func
 }
 
 export default Comparison;
