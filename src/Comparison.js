@@ -31,7 +31,7 @@ const Comparison = ({ dataArray, toggleSelected, findAverage, compareDistrictAve
         selected={selectedDistricts[0].selected}
         toggleSelected={toggleSelected}
       />}
-      {showComp && <div>
+      {showComp && <div className='comparison-results'>
         <p>{selectedDistricts[0].location} AVERAGE: {(comparisonResults[selectedDistricts[0].location] * 100).toFixed(1)}%</p>
         <p>Ratio (Location 1 / Location 2): {(comparisonResults.compared * 100).toFixed(1)}%</p>
         <p>{selectedDistricts[1].location} AVERAGE: {(comparisonResults[selectedDistricts[1].location] * 100).toFixed(1)}%</p>
