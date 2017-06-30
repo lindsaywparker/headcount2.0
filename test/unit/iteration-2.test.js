@@ -5,7 +5,6 @@ import CardList from '../../src/CardList';
 import Card from '../../src/Card';
 import App from '../../src/App';
 import Filter from '../../src/Filter';
-import Start from '../../src/Start';
 import Comparison from '../../src/Comparison';
 import { shallow, mount } from 'enzyme';
 
@@ -41,12 +40,6 @@ describe('DistrictRepository iteration 2', () =>  {
 
     expect(wrapper.find('[type="text"]').length).toBe(1);
     expect(wrapper.find('[type="button"]').length).toBe(1);
-  });
-
-  test('Start should render', () => {
-    const wrapper = shallow(<App />)
-
-    expect(wrapper.find(Start).length).toBe(1);
   });
 
   test('Comparison should render', () => {

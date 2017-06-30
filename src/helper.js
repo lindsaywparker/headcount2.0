@@ -5,7 +5,7 @@ export default class DistrictRepository {
 
   findAllMatches(input) {
     const locationsArray = Object.keys(this.data).map( location => {
-      return {location: location, data: this.data[location], selected: false};
+      return {location: location, data: this.data[location], average: this.findAverage(location), selected: false};
     });
     
     if(!input) {

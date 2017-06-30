@@ -1,33 +1,40 @@
 .comparison {
   display: flex;
   justify-content: space-around;
-  background-image: url('./blackboard.jpg');
-  height: 350px;
+  height: 410px;
+  padding: 5px 20px;
   border: 15px solid transparent;
   border-image: url('./woodgrain.jpg') 30 round;
+  background-image: url('./blackboard.jpg');
 }
 
 .comparison-results {
+  width: 400px;
+  margin: auto 0;
   color: white;
   font-family: 'Cabin Sketch', Arial, sans-serif;
   font-size: 20px;
-  margin: auto;
   text-align: center;
 }
 
+.comparison-results p {
+  margin: 0;
+}
+
 .start-message {
+  width: 60%;
+  margin: 50px auto;
   color: white;
   font-family: 'Cabin Sketch', Arial, sans-serif;
   font-size: 35px;
-  margin: 25px;
-  text-align: left;
+  text-align: center;
 }
 
 @media screen and (max-width: 675px) {
   .comparison {
     flex-direction: column;
-    height: 100%;
     align-items: center;
+    height: 100%;
   }
 
   .start-message {

@@ -2,13 +2,14 @@ import React from 'react';
 import { string, object, bool, func } from 'prop-types';
 import './Card.css';
 
-const Card = ( { location, data, selected, toggleSelected } ) => {
+const Card = ( { location, data, average, selected, toggleSelected } ) => {
   const rows = Object.keys(data).reverse();
   const activeClass = selected === true ? 'active' : 'inactive';
 
   return (
     <div className={'card ' + activeClass} onClick={() => toggleSelected(location)}>
       <h2 className='district-title'>{location}</h2>
+      {selected && <p className='average'>Average: {(average * 100).toFixed(1)}%</p>}
       <table>
         <thead>
           <tr>

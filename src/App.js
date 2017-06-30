@@ -39,7 +39,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='app'>
         <Comparison dataArray={this.state.dataArray}
                     toggleSelected={this.toggleSelected.bind(this)}
                     findAverage={district.findAverage.bind(district)}

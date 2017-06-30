@@ -40,17 +40,21 @@ const Comparison = ({ dataArray, toggleSelected, findAverage, compareDistrictAve
       {showOne && <Card key={0}
         location={selectedDistricts[0].location}
         data={selectedDistricts[0].data}
+        average={selectedDistricts[0].average}
         selected={selectedDistricts[0].selected}
         toggleSelected={toggleSelected}
       />}
       {showComp && <div className='comparison-results'>
-        <p>{selectedDistricts[0].location} AVERAGE: {(comparisonResults[selectedDistricts[0].location] * 100).toFixed(1)}%</p>
-        <p>Ratio ({selectedDistricts[0].location} / {selectedDistricts[1].location}): {(comparisonResults.compared * 100).toFixed(1)}%</p>
-        <p>{selectedDistricts[1].location} AVERAGE: {(comparisonResults[selectedDistricts[1].location] * 100).toFixed(1)}%</p>
+        <h2>RATIO</h2>
+        <p>{selectedDistricts[0].location}</p>
+        <p>&#247;</p>
+        <p>{selectedDistricts[1].location}</p>
+        <h2>{(comparisonResults.compared * 100).toFixed(1)}%</h2>
       </div>}
       {showTwo && <Card key={1}
         location={selectedDistricts[1].location}
         data={selectedDistricts[1].data}
+        average={selectedDistricts[1].average}
         selected={selectedDistricts[1].selected}
         toggleSelected={toggleSelected}
       />}
