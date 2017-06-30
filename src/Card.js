@@ -1,6 +1,5 @@
 import React from 'react';
 import { string, object, bool, func } from 'prop-types';
-
 import './Card.css';
 
 const Card = ( { location, data, selected, toggleSelected } ) => {

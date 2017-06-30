@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Start from './Start';
 import Comparison from './Comparison';
 import Filter from './Filter';
 import CardList from './CardList';
@@ -29,7 +28,6 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Start />
         <Comparison dataArray={this.state.dataArray}
                     toggleSelected={this.toggleSelected.bind(this)}
                     findAverage={district.findAverage.bind(district)}
