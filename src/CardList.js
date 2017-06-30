@@ -10,6 +10,7 @@ const CardList = ({dataArray, toggleSelected}) => {
         <Card key={i}
               location={district.location}
               data={district.data}
+              average={district.average}
               selected={district.selected}
               toggleSelected={toggleSelected}
         />

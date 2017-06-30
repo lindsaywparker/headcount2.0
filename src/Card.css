@@ -9,10 +9,13 @@
 
 .card h2 {
   height: 30px;
+  margin: 15px 0;
   font-weight: 400;
   font-size: 20px;
-  margin: 15px 0;
+}
 
+.card .average {
+  font-style: italic;
 }
 
 .card table {
@@ -23,12 +26,12 @@
 }
 
 .active {
-  box-shadow: 5px 3px 3px #0C273D;
   border: 3px solid gray;
+  box-shadow: 5px 3px 3px #0C273D;
 }
 
 .active h2 {
+  margin: 10px 0;
   color: #d5654b;
   font-weight: 700;
-  margin: 10px 0;
 }
