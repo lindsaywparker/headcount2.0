@@ -23,7 +23,6 @@ const Comparison = ({ dataArray, toggleSelected, findAverage, compareDistrictAve
     comparisonResults = compareDistrictAverages(selectedDistricts[0].location, selectedDistricts[1].location)
   }
   
-  
   return (
     <div className='comparison'>
       {showOne && <Card key={0}
