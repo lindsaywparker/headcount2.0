@@ -22,7 +22,19 @@ export default class App extends Component {
   toggleSelected(location) {
     const index = this.state.dataArray.map(district => district.location).indexOf(location);
     this.state.dataArray[index].selected = !this.state.dataArray[index].selected;
-    this.setState({ dataArray: this.state.dataArray });
+
+    let selectedTotal = 0;
+    const selectedTotalSum = this.state.dataArray.map((district) => {
+      if(district.selected === true) {
+        selectedTotal++;
+      }
+    })
+
+    if(selectedTotal <= 2) {
+      this.setState({ dataArray: this.state.dataArray })
+    } else {
+      this.state.dataArray[index].selected = !this.state.dataArray[index].selected;
+    }
   }
 
   render() {
