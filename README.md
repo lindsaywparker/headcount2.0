@@ -2,7 +2,7 @@
 
 ### Synopsis
 
-This project contains data visualization for  kindergartners enrollment data across Colorado school districts, as well as functionality to compare two selected districts.
+This project contains data visualization for kindergartners enrollment data across Colorado school districts, as well as functionality to compare two selected districts.
 
 ### Set Up
 
